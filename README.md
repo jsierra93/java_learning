@@ -29,20 +29,23 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.1")
+        classpath('net.serenity-bdd:serenity-gradle-plugin:2.0.81')
     }
 }
 ```
 
-3. Le decimos a gradle que compile los test con el core de serenity y Junit
+3. Le decimos a gradle que compile los test con el core de serenity, Junit, Cucumber y Screenplay
 ```
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile 'net.serenity-bdd:serenity-core:1.1.1'
-    testCompile 'net.serenity-bdd:serenity-junit:1.1.1'
-    testCompile('org.assertj:assertj-core:1.7.0')
-    testCompile('org.slf4j:slf4j-simple:1.7.7')
+      testCompile group: 'junit', name: 'junit', version: '4.12'
+      testCompile 'net.serenity-bdd:serenity-core:2.0.81'
+      testCompile 'net.serenity-bdd:serenity-junit:2.0.81'
+      testCompile('org.assertj:assertj-core:1.7.0')
+      testCompile('org.slf4j:slf4j-simple:1.7.7')
+  
+      implementation 'net.serenity-bdd:serenity-cucumber:1.9.45'
+      implementation 'net.serenity-bdd:serenity-screenplay:2.0.81'
 }
 ```
 

@@ -23,9 +23,11 @@
 hs_err_pid*
 .gradle/
 .idea/
+
 #Omitir evidencias de serenity
-target/
+target/*
 
 #Ignorar codigo compilado
 
-build/
+build/*
+history/
