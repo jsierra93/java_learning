@@ -1,0 +1,48 @@
+apply plugin: 'java'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+group 'co.jsierra.com'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+
+def cucumberVersion = '4.7.4'
+
+
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath('net.serenity-bdd:serenity-gradle-plugin:2.0.81')
+    }
+}
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    jcenter()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'net.serenity-bdd:serenity-core:2.0.81'
+    testCompile 'net.serenity-bdd:serenity-junit:2.0.81'
+    testCompile('org.assertj:assertj-core:1.7.0')
+    testCompile('org.slf4j:slf4j-simple:1.7.7')
+
+    implementation 'net.serenity-bdd:serenity-cucumber:1.9.45'
+    implementation 'net.serenity-bdd:serenity-screenplay:2.0.81'
+
+   // testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
+    //testImplementation "io.cucumber:cucumber-junit:${cucumberVersion}"
+}
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+gradle.startParameter.continueOnFailure = true

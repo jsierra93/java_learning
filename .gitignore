@@ -23,14 +23,6 @@
 hs_err_pid*
 .gradle/
 .idea/
-build.gradle
-gradle/wrapper/gradle-wrapper.properties
-gradlew
-gradlew.bat
-settings.gradle
-src/
-test_automation/
-
 #Omitir evidencias de serenity
 target/
 
